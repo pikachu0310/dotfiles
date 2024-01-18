@@ -1,0 +1,180 @@
+# ref
+# starship configuration reference: https://starship.rs/config/
+# inspired by Pastel Powerline Preset: https://starship.rs/presets/pastel-powerline.html
+# nerd font cheet sheet: https://www.nerdfonts.com/cheat-sheet
+"$schema" = 'https://starship.rs/config-schema.json'
+
+format = """
+[](fg:1_bg)\
+$os\
+$username\
+$hostname\
+[](bg:2_bg fg:1_bg)\
+$directory\
+[](bg:3_bg fg:2_bg)\
+$git_branch\
+$git_status\
+[](bg:4_bg fg:3_bg)\
+$golang\
+$python\
+$haskell\
+$nodejs\
+[](bg:5_bg fg:4_bg)\
+$time\
+[](bg:6_bg fg:5_bg)\
+$cmd_duration\
+[](fg:6_bg)\
+\n$status$character
+"""
+
+right_format = """
+[](bg:7_bg fg:6_bg)\
+[](bg:6_bg fg:5_bg)\
+[](bg:5_bg fg:4_bg)\
+[](bg:4_bg fg:3_bg)\
+[](bg:3_bg fg:2_bg)\
+$memory_usage\
+[](bg:2_bg fg:1_bg)\
+$battery\
+[](fg:1_bg)\
+"""
+
+# Disable the blank line at the start of the prompt
+add_newline = false
+
+palette = "eyemono"
+
+[palettes.eyemono]
+1_bg = '#FF4FDB'
+2_bg = '#B274FF'
+3_bg = '#08C6E9'
+4_bg = '#17EDC6'
+5_bg = '#85E33C'
+6_bg = '#EEF300'
+1_fg = '#191E1F'
+2_fg = '#191E1F'
+3_fg = '#191E1F'
+4_fg = '#191E1F'
+5_fg = '#191E1F'
+6_fg = '#191E1F'
+
+[os]
+disabled = false
+style = "bg:1_bg fg:1_fg"
+format = "[$symbol ]($style)"
+
+[os.symbols]
+Macos = "" # nf-fa-apple
+Ubuntu = "" # nf-linux-ubuntu
+Debian = "" # nf-linux-debian
+
+[username]
+disabled = false
+format = "[$user]($style)"
+style_root = "bg:1_bg fg:red bold"
+style_user = "bg:1_bg fg:1_fg"
+show_always = false
+
+[hostname]
+disabled = false
+style = "bg:1_bg fg:1_fg"
+ssh_only = true
+trim_at = "."
+format = "[@$hostname]($style)"
+
+[directory]
+style = "bg:2_bg fg:2_fg"
+format = "[  $path ]($style)"
+truncation_length = 3
+truncation_symbol = "…/"
+read_only = " "
+
+# Here is how you can shorten some long paths by text replacement
+# similar to mapped_locations in Oh My Posh:
+[directory.substitutions]
+"Documents" = "󰈙"
+"Downloads" = ""
+"Music" = ""
+"Pictures" = ""
+
+[git_branch]
+style = "bg:3_bg fg:3_fg"
+format = '[  $branch ]($style)'
+
+[git_status]
+style = "bg:3_bg fg:3_fg"
+format = '[$all_status$ahead_behind]($style)'
+conflicted = ' '
+stashed = ' '
+deleted = ' '
+renamed = '󰘎 '
+modified = ' '
+staged = ' $count '
+untracked = ' '
+ahead = ' ${count} '
+behind = ' ${count} '
+diverged = ' ${ahead_count}  ${behind_count} '
+up_to_date = ' '
+
+[golang]
+symbol = ""
+style = "bg:4_bg fg:4_fg"
+format = '[ $symbol ($version) ]($style)'
+
+[python]
+symbol = ""
+style = "bg:4_bg fg:4_fg"
+format = '[ $symbol ($version) ]($style)'
+
+[nodejs]
+symbol = ""
+style = "bg:4_bg fg:4_fg"
+format = '[ $symbol ($version) ]($style)'
+
+[time]
+disabled = false
+time_format = "%R"                        # Hour:Minute Format
+style = "bg:5_bg fg:5_fg"
+format = '[  $time ]($style)'
+
+[cmd_duration]
+min_time = 500
+style = "bg:6_bg fg:6_fg"
+format = "[  $duration ]($style)"
+show_notifications = true #test
+show_milliseconds = true #test
+
+[character]
+success_symbol = "[❯](bold green)"
+error_symbol = "[❯](bold red)"
+
+[memory_usage]
+style = "bg:2_bg fg:2_bg"
+#format = "[ $ram $ram_pct | $swap $swap_pct]($style)"
+format = "[  $ram_pct ]($style)"
+disabled = false
+threshold = -1
+
+[status]
+style = ""
+format = '[$status]($style) '
+disabled = false
+
+[battery]
+full_symbol = " "
+charging_symbol = " "
+discharging_symbol = " "
+unknown_symbol = " "
+format = "[$symbol $percentage]($style)"
+
+[[battery.display]]  # "bold red" style when capacity is between 0% and 10%
+threshold = 10
+style = "bold red"
+
+[[battery.display]]  # "bold yellow" style when capacity is between 10% and 30%
+threshold = 30
+style = "bold yellow"
+
+[[battery.display]]
+threshold = 100
+style = "bold green"
