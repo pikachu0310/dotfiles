@@ -30,4 +30,5 @@ fish_add_path $HOME/go/bin
 set -gx JAVA_HOME "/home/pikachu0310/.jdks/openjdk-21.0.1"
 fish_add_path /home/pikachu0310/.jdks/openjdk-21.0.1
 set -gx GOPRIVATE "github.com/no9jp/proto"
-fish_add_path "$HOME/.rbenv/bin:$PATH"
+fish_add_path "$HOME/.rbenv/bin"
+status --is-interactive; and . (rbenv init -|psub)

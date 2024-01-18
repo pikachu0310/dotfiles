@@ -1,165 +1,187 @@
+# ref
+# starship configuration reference: https://starship.rs/config/
+# inspired by Pastel Powerline Preset: https://starship.rs/presets/pastel-powerline.html
+# nerd font cheet sheet: https://www.nerdfonts.com/cheat-sheet
+"$schema" = 'https://starship.rs/config-schema.json'
+
 format = """
-[](#9A348E)\
+[](fg:1_bg)\
 $os\
 $username\
 $hostname\
-[](bg:#DA627D fg:#9A348E)\
+[](bg:2_bg fg:1_bg)\
 $directory\
-[](fg:#DA627D bg:#FCA17D)\
+[](bg:3_bg fg:2_bg)\
 $git_branch\
 $git_status\
-[](fg:#FCA17D bg:#86BBD8)\
-$c\
-$elixir\
-$elm\
+[](bg:4_bg fg:3_bg)\
 $golang\
-$gradle\
+$python\
 $haskell\
-$java\
-$julia\
 $nodejs\
-$nim\
-$rust\
-$scala\
-[](fg:#86BBD8 bg:#06969A)\
-$docker_context\
-[](fg:#06969A bg:#33658A)\
+$ruby\
+[](bg:5_bg fg:4_bg)\
 $time\
-[ ](fg:#33658A)\
+[](bg:6_bg fg:5_bg)\
+$cmd_duration\
+[](fg:6_bg)\
+\n$status$character
+"""
+
+right_format = """
+[](bg:7_bg fg:6_bg)\
+[](bg:6_bg fg:5_bg)\
+[](bg:5_bg fg:4_bg)\
+[](bg:4_bg fg:3_bg)\
+[](bg:3_bg fg:2_bg)\
+$memory_usage\
+[](bg:2_bg fg:1_bg)\
+$battery\
+[](fg:1_bg)\
 """
 
 # Disable the blank line at the start of the prompt
-# add_newline = false
+add_newline = false
 
-# You can also replace your username with a neat symbol like   or disable this
-# and use the os module below
-[hostname]
-ssh_only = true
-format = '[$ssh_symbol](bg:#9A348E)[@$hostname](bg:#9A348E)'
-trim_at = '.companyname.com'
-disabled = false
+palette = "eyemono"
 
-[username]
-show_always = true
-style_user = "bg:#9A348E"
-style_root = "bg:#9A348E"
-format = '[$user ]($style)'
-disabled = false
+[palettes.eyemono]
+1_bg = '#FF4FDB'
+2_bg = '#B274FF'
+3_bg = '#08C6E9'
+4_bg = '#17EDC6'
+5_bg = '#85E33C'
+6_bg = '#EEF300'
+1_fg = '#191E1F'
+2_fg = '#191E1F'
+3_fg = '#191E1F'
+4_fg = '#191E1F'
+5_fg = '#191E1F'
+6_fg = '#191E1F'
 
-# An alternative to the username module which displays a symbol that
-# represents the current operating system
 [os]
-style = "bg:#9A348E"
-format = "[$symbol]($style)"
-disabled = false # Disabled by default
+disabled = false
+style = "bg:1_bg fg:1_fg"
+format = "[$symbol ]($style)"
 
 [os.symbols]
-Ubuntu = " "  # nf-linux-ubuntu
+Macos = "" # nf-fa-apple
+Ubuntu = "" # nf-linux-ubuntu
+Debian = "" # nf-linux-debian
+
+[username]
+disabled = false
+format = "[$user]($style)"
+style_root = "bg:1_bg fg:red bold"
+style_user = "bg:1_bg fg:1_fg"
+show_always = false
+
+[hostname]
+disabled = false
+style = "bg:1_bg fg:1_fg"
+ssh_only = true
+trim_at = "."
+format = "[@$hostname]($style)"
 
 [directory]
-style = "bg:#DA627D"
-format = "[ $path ]($style)"
+style = "bg:2_bg fg:2_fg"
+format = "[  $path ]($style)"
 truncation_length = 3
 truncation_symbol = "…/"
+read_only = " "
 
 # Here is how you can shorten some long paths by text replacement
 # similar to mapped_locations in Oh My Posh:
 [directory.substitutions]
-"Documents" = "󰈙 "
-"Downloads" = " "
-"Music" = " "
-"Pictures" = " "
-# Keep in mind that the order matters. For example:
-# "Important Documents" = " 󰈙 "
-# will not be replaced, because "Documents" was already substituted before.
-# So either put "Important Documents" before "Documents" or use the substituted version:
-# "Important 󰈙 " = " 󰈙 "
-
-[c]
-symbol = " "
-style = "bg:#86BBD8"
-format = '[ $symbol ($version) ]($style)'
-
-[docker_context]
-symbol = " "
-style = "bg:#06969A"
-format = '[ $symbol $context ]($style) $path'
-
-[elixir]
-symbol = " "
-style = "bg:#86BBD8"
-format = '[ $symbol ($version) ]($style)'
-
-[elm]
-symbol = " "
-style = "bg:#86BBD8"
-format = '[ $symbol ($version) ]($style)'
+"Documents" = "󰈙"
+"Downloads" = ""
+"Music" = ""
+"Pictures" = ""
 
 [git_branch]
-symbol = " "
-style = "bg:#FCA17D"
-format = '[ $symbol $branch ]($style)'
+style = "bg:3_bg fg:3_fg"
+format = '[  $branch ]($style)'
 
 [git_status]
-conflicted = "⚔️ "
-ahead = "🏎️ 💨 ×${count}"
-behind = "🐢 ×${count}"
-diverged = "🔱 🏎️ 💨 ×${ahead_count} 🐢 ×${behind_count}"
-untracked = "🛤️  ×${count}"
-stashed = "📦 "
-modified = "📝 ×${count}"
-staged = "🗃️  ×${count}"
-renamed = "📛 ×${count}"
-deleted = "🗑️  ×${count}"
-style = "bg:#FCA17D"
-format = '[$all_status$ahead_behind ]($style)'
+style = "bg:3_bg fg:3_fg"
+format = '[$all_status$ahead_behind]($style)'
+conflicted = ' '
+stashed = ' '
+deleted = ' '
+renamed = '󰘎 '
+modified = ' '
+staged = ' $count '
+untracked = ' '
+ahead = ' ${count} '
+behind = ' ${count} '
+diverged = ' ${ahead_count}  ${behind_count} '
+up_to_date = ' '
 
 [golang]
-symbol = " "
-style = "bg:#86BBD8"
+symbol = ""
+style = "bg:4_bg fg:4_fg"
 format = '[ $symbol ($version) ]($style)'
 
-[gradle]
-style = "bg:#86BBD8"
-format = '[ $symbol ($version) ]($style)'
-
-[haskell]
-symbol = " "
-style = "bg:#86BBD8"
-format = '[ $symbol ($version) ]($style)'
-
-[java]
-symbol = " "
-style = "bg:#86BBD8"
-format = '[ $symbol ($version) ]($style)'
-
-[julia]
-symbol = " "
-style = "bg:#86BBD8"
+[python]
+symbol = ""
+style = "bg:4_bg fg:4_fg"
 format = '[ $symbol ($version) ]($style)'
 
 [nodejs]
 symbol = ""
-style = "bg:#86BBD8"
+style = "bg:4_bg fg:4_fg"
 format = '[ $symbol ($version) ]($style)'
 
-[nim]
-symbol = "󰆥 "
-style = "bg:#86BBD8"
-format = '[ $symbol ($version) ]($style)'
-
-[rust]
-symbol = ""
-style = "bg:#86BBD8"
-format = '[ $symbol ($version) ]($style)'
-
-[scala]
-symbol = " "
-style = "bg:#86BBD8"
+[ruby]
+symbol = ""
+style = "bg:4_bg fg:4_fg"
 format = '[ $symbol ($version) ]($style)'
 
 [time]
 disabled = false
-time_format = "%R" # Hour:Minute Format
-style = "bg:#33658A"
-format = '[ 🕙 $time ]($style)'
+time_format = "%R"                        # Hour:Minute Format
+style = "bg:5_bg fg:5_fg"
+format = '[  $time ]($style)'
+
+[cmd_duration]
+min_time = 500
+style = "bg:6_bg fg:6_fg"
+format = "[  $duration ]($style)"
+show_notifications = true #test
+show_milliseconds = true #test
+
+[character]
+success_symbol = "[❯](bold green)"
+error_symbol = "[❯](bold red)"
+
+[memory_usage]
+style = "bg:2_bg fg:2_bg"
+#format = "[ $ram $ram_pct | $swap $swap_pct]($style)"
+format = "[  $ram_pct ]($style)"
+disabled = false
+threshold = -1
+
+[status]
+style = ""
+format = '[$status]($style) '
+disabled = false
+
+[battery]
+full_symbol = " "
+charging_symbol = " "
+discharging_symbol = " "
+unknown_symbol = " "
+format = "[$symbol $percentage]($style)"
+
+[[battery.display]]  # "bold red" style when capacity is between 0% and 10%
+threshold = 10
+style = "bold red"
+
+[[battery.display]]  # "bold yellow" style when capacity is between 10% and 30%
+threshold = 30
+style = "bold yellow"
+
+[[battery.display]]
+threshold = 100
+style = "bold green"
+
