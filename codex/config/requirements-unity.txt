@@ -1,0 +1,2 @@
+# Unity Skills Python client only; install in the interpreter selected for Unity operations.
+requests==2.34.2

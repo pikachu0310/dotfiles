@@ -1,0 +1,6 @@
+interface:
+  display_name: "ax"
+  short_description: "公開ページの本文・表・一覧を構造ごと取り出し、Web調査に使う"
+  default_prompt: "Use $ax to extract the relevant public-page text or structured rows for this research."
+policy:
+  allow_implicit_invocation: true

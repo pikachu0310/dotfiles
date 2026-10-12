@@ -1,0 +1,20 @@
+# Runtime/private state must never become publication input.
+**/__pycache__/
+*.pyc
+.env
+.env.*
+!.env.example
+**/auth.json
+**/config.toml
+**/ops-profile.json
+**/sessions/
+**/logs/
+**/cache/
+*.sqlite*
+*.db
+context/*.md
+context/personal/
+**/agent_config.json
+**/install_info.json
+**/.venv/
+**/venv/

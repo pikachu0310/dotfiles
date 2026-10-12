@@ -1,0 +1,6 @@
+# Selected portable preferences, not an export of authenticated config.toml.
+# Apply individual settings after reviewing your existing config.
+model = "gpt-6.1-sol"
+model_reasoning_effort = "high"
+# Sandbox and approvals stay in the receiving user's existing configuration.
+# Do not copy authentication, runtime paths, connector IDs or existing projects.

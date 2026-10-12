@@ -1,0 +1,90 @@
+{
+  "schema_version": 1,
+  "skills": [
+    {
+      "name": "ax",
+      "source": ".agents/skills/ax",
+      "windows_root": ".agents/skills"
+    },
+    {
+      "name": "brainstorming",
+      "source": ".agents/skills/brainstorming",
+      "windows_root": ".agents/skills"
+    },
+    {
+      "name": "frontend-design",
+      "source": ".agents/skills/frontend-design",
+      "windows_root": ".agents/skills"
+    },
+    {
+      "name": "frontend-ui-engineering",
+      "source": ".agents/skills/frontend-ui-engineering",
+      "windows_root": ".agents/skills"
+    },
+    {
+      "name": "git-commit-style-gitmoji",
+      "source": ".agents/skills/git-commit-style-gitmoji",
+      "windows_root": ".agents/skills"
+    },
+    {
+      "name": "grilling",
+      "source": ".agents/skills/grilling",
+      "windows_root": ".agents/skills"
+    },
+    {
+      "name": "japanese-cognitive-rhythm-writing",
+      "source": ".agents/skills/japanese-cognitive-rhythm-writing",
+      "windows_root": ".agents/skills"
+    },
+    {
+      "name": "japanese-tech-writing",
+      "source": ".agents/skills/japanese-tech-writing",
+      "windows_root": ".agents/skills"
+    },
+    {
+      "name": "natural-japanese",
+      "source": ".agents/skills/natural-japanese",
+      "windows_root": ".agents/skills"
+    },
+    {
+      "name": "ponytail",
+      "source": ".agents/skills/ponytail",
+      "windows_root": ".agents/skills"
+    },
+    {
+      "name": "prepare-release-candidate",
+      "source": ".agents/skills/prepare-release-candidate",
+      "windows_root": ".agents/skills"
+    },
+    {
+      "name": "react-best-practices",
+      "source": ".agents/skills/react-best-practices",
+      "windows_root": ".agents/skills"
+    },
+    {
+      "name": "research-and-align",
+      "source": ".agents/skills/research-and-align",
+      "windows_root": ".agents/skills"
+    },
+    {
+      "name": "unity-skills",
+      "source": ".agents/skills/unity-skills",
+      "windows_root": ".agents/skills"
+    },
+    {
+      "name": "vrc-world-development",
+      "source": ".agents/skills/vrc-world-development",
+      "windows_root": ".agents/skills"
+    },
+    {
+      "name": "web-design-guidelines",
+      "source": ".agents/skills/web-design-guidelines",
+      "windows_root": ".agents/skills"
+    },
+    {
+      "name": "yomiyasu",
+      "source": ".agents/skills/yomiyasu",
+      "windows_root": ".agents/skills"
+    }
+  ]
+}

@@ -1,0 +1,6 @@
+interface:
+  display_name: "VRChatワールド制作"
+  short_description: "体験・素材・デザイン・最適化・同期と通常復旧の共通方針で制作を進める"
+  default_prompt: "$vrc-world-development を使い、本人の共通要望を守り、通常確認で止まらずワールド制作を進めてください。"
+policy:
+  allow_implicit_invocation: true

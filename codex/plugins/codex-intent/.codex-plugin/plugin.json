@@ -1,0 +1,29 @@
+{
+  "name": "codex-intent",
+  "version": "0.4.0-public",
+  "description": "Route each captured intent into one focused native Codex task.",
+  "author": {
+    "name": "pikachu0310"
+  },
+  "keywords": [
+    "codex",
+    "intent",
+    "tasks",
+    "intake"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Codex Intent",
+    "shortDescription": "Route one intent to one focused Codex task.",
+    "longDescription": "Use a small pinned intake task to create a correctly routed, self-contained Codex task for each outcome.",
+    "developerName": "pikachu0310",
+    "category": "Productivity",
+    "capabilities": [
+      "Interactive",
+      "Write"
+    ],
+    "defaultPrompt": [
+      "Use $codex-intent to create one focused task for this intent."
+    ]
+  }
+}

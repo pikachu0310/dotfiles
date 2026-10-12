@@ -1,0 +1,6 @@
+interface:
+  display_name: "Research and Align"
+  short_description: "Research prior art and align before consequential implementation"
+  default_prompt: "Use $research-and-align to inspect current artifacts, relevant owner history, and existing solutions, then resolve only outcome-changing choices."
+policy:
+  allow_implicit_invocation: true

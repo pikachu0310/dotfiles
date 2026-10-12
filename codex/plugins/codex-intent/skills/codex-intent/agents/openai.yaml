@@ -1,0 +1,6 @@
+interface:
+  display_name: "Codex Intent"
+  short_description: "成果ごとの新しいCodexタスクを作るIntent受付"
+  default_prompt: "Use $codex-intent to route this intent into one focused Codex task."
+policy:
+  allow_implicit_invocation: true

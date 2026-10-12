@@ -1,0 +1,8 @@
+{
+  "private_ops_project": null,
+  "model": "gpt-6.1-sol",
+  "thinking": "high",
+  "wsl_distribution": "Ubuntu-24.04",
+  "windows_codex_home": null,
+  "note": "Model/effort are the author preset. Choose available settings; null model/effort uses App defaults. Keep the completed profile outside this public repository."
+}

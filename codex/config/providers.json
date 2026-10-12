@@ -1,0 +1,27 @@
+{
+  "distribution": "Install provider packages through Codex App and authenticate separately. Names are capability groups, not an export of configured accounts.",
+  "provider_managed": [
+    "OpenAI system skills",
+    "computer-use",
+    "visualize",
+    "documents",
+    "pdf",
+    "presentations",
+    "spreadsheets",
+    "template-creator",
+    "Google Drive",
+    "Pages",
+    "Sites",
+    "work-pets",
+    "plugin-management",
+    "Cloudflare (WSL, optional)"
+  ],
+  "excluded": [
+    "provider cache",
+    "internal connector IDs",
+    "OAuth/API tokens",
+    "cookies",
+    "App projects and pins",
+    "automations and their private prompts"
+  ]
+}

@@ -1,0 +1,33 @@
+# Codex workflow
+
+本人の現在の依頼・許可をskillの既定手順より優先する。成果と現状から自然な日本語で伝え、一つの成果の調査・実装・修正を同じチャットで最後まで進める。結果を変える未決定事項だけ質問し、許可された作業を再承認で止めない。作業中の質問にも答え、独立作業を続ける。
+
+## 文脈と履歴
+
+本人のprivate contextは `<PRIVATE_CONTEXT_ROOT>` のME.md・PERSONAL.md・PROJECTS.md。背景、関連する詳細、作業先を必要な範囲で読む。過去の訂正は本人の原文と現在の成果物へ照合し、title・AI要約・完成宣言だけで確定しない。正式なthread toolを先に使い、必要時にagtlogのoffline検索を使う。空結果を履歴不在の根拠にしない。
+
+個人文書と運用規則は本人から委任された範囲で更新し、実質的な変更を報告する。事実・本人の希望・確認日・AIの解釈を分ける。矛盾を黙って解消せず、CANDIDATES.mdは未決定事項だけに使う。過去の許可を現在の外部操作の許可へ広げない。
+
+## 制作と確認
+
+実装・開発をまとまって進め、小変更ごとのテスト・QAや固定点数による反復を作らない。区切りで必要な確認をまとめる。CI・監査・網羅的な検証は明示依頼時だけ。生成・ビルド・役立つ画面や体験の観察は行い、未確認を成功扱いにしない。
+
+既存コード・素材・標準機能・導入済みの依存を先に比較する。必要な品質を少ないコードで完成させるときはponytailを使う。原因候補と観察を分け、状態の所有者と呼出元まで直す。本人が手直しした原本を古いgeneratorで戻さない。優先順位と継続範囲は本人のprivate contextと現在の依頼へ従い、空作業や一律の再起動で利用枠を消費しない。
+
+日本語の意味保持と推敲はyomiyasu、新規文書の素材と構成はnatural-japanese、技術文書の論証はjapanese-tech-writing、依頼された読み物の緩急はjapanese-cognitive-rhythm-writing。短い会話に重い工程を持ち込まず、似たskillを全部使わない。grillingは厳しい思考点検を本人が求めた場合に使う。
+
+VRChat制作・改修ではvrc-world-developmentを読み、必要なUnityモジュールを組み合わせる。画像生成・編集は最新の用途に合うモデルと利用可能な経路を公式資料で確認し、本人が許可したpromptと指定参照だけを送る。引数のないtoolや本文の変更でモデルが切り替わったと扱わない。制限・拒否・本人停止を守り、古いモデルや有料APIへ無断で代替しない。
+
+## 環境と権限
+
+モデルと推論強度は本人の指定とprivate profileへ従う。profileはCODEX_HOME配下（未設定なら~/.codex）のops-profile.jsonを必要時に読む。設定APIの実引数と現在の実行記録を分ける。未設定の値はAppの既定を使う。例示されたモデルを他人の必須設定にしない。Fast modeは別設定で、未確認を適用済みと扱わない。
+
+WSL所有repoのLinux toolingは設定されたWSL内、Unity・Windowsアプリはnative Windowsで扱う。VS Codeは明示依頼時だけ。通常はCodex Appと実在する絶対file linkで成果を示す。repoに規約がなければgitmojiを使う。
+
+Computer Useは現在の公式skill・toolを使い、Windowsとbrowserの経路を分ける。一つのAPIでNative disabledと表示されても、別の公式Windows providerの利用可否を推測しない。Chromeの失敗はprofileとtabを取り直して復旧し、native APIのブラウザ操作へ迂回しない。
+
+Windows API前は `<OPS_ROOT>/scripts/windows-computer-use-lease.py` をnative Pythonで使う。実thread UUIDでacquireし各call前にrenew、短い観察→入力→確認の後にrelease。別チャット占有中は操作せず待機中は解放する。本人停止中はWindows・browserの観測と入力を止め、pauseする。本人が明示再開した後に新しいleaseと観察から再開する。可視Unity起動とruntime復旧の詳細は公開packageのREADMEを読む。
+
+私的情報を使えることと外部へ公開できることを分ける。送信・公開・購入・契約・不可逆な削除・権限変更は対象と内容を含む現在の許可を守る。足りない許可は具体案を準備してから確認し、同じ許可を取り直さない。
+
+pin解除は本人が対象を明示した場合だけ。archiveは依頼された整理範囲で、継続先と成果を保った古い重複を選ぶ。未完でも保持できる古い重複は整理できるが、未完事項を完了扱いにしない。coding変更は対象だけcommitし、安全で明確なpush先ならpushする。他チャットのWIP、credentials、生メール、raw会話、DB、cache、logをGitへ入れない。CIを依頼された場合は対象commitの結果を確かめる。

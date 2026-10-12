@@ -1,0 +1,33 @@
+{
+  "verified_at": "2026-10-11",
+  "tools": [
+    {
+      "repository": "motoki317/agtlog",
+      "version": "v0.4.2",
+      "assets": [
+        {
+          "asset": "agtlog-0.4.2-linux-amd64.tar.gz",
+          "url": "https://github.com/motoki317/agtlog/releases/download/v0.4.2/agtlog-0.4.2-linux-amd64.tar.gz",
+          "sha256": "6f2a768bbde45f0783380e18c0a2193c690841fc7f38120a4422255c2b90e35b"
+        }
+      ]
+    },
+    {
+      "repository": "yusukebe/ax",
+      "version": "v0.1.25",
+      "assets": [
+        {
+          "asset": "ax-linux-x64",
+          "url": "https://github.com/yusukebe/ax/releases/download/v0.1.25/ax-linux-x64",
+          "sha256": "6e72297182074038a202d94e1cca9d61e8908d8a4fd5206b3c25ab91957cae2f"
+        },
+        {
+          "asset": "ax-windows-x64.exe",
+          "url": "https://github.com/yusukebe/ax/releases/download/v0.1.25/ax-windows-x64.exe",
+          "sha256": "abb0cef32377fc890e716f2375b94db453f65f87d984ff49cf56ef392a9881e5"
+        }
+      ]
+    }
+  ],
+  "agtlog_binary_sha256": "53d46629ff13c6100b0e6c200d23fffb7794fd0f9b1376682fb0c1f30596dc0f"
+}

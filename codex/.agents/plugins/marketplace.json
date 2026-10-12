@@ -1,0 +1,20 @@
+{
+  "name": "codex-dotfiles",
+  "interface": {
+    "displayName": "Codex Dotfiles"
+  },
+  "plugins": [
+    {
+      "name": "codex-intent",
+      "source": {
+        "source": "local",
+        "path": "./plugins/codex-intent"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    }
+  ]
+}
