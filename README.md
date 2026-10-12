@@ -105,6 +105,12 @@ python3 codex/scripts/check-public.py
 
 これは収録ファイルのhash・禁止path・既知のcredential形式・個人path・private thread URLを確認する。意味上の個人情報を完全に検出する保証はない。更新時は内容も読み、利用者固有の許可を公開版へ持ち込んでいないことを確かめる。実データを誤ってGitへ入れた場合は、公開を止め、必要ならcredentialを失効させる。private repoのvisibilityを変更して公開しない。
 
+## 再現範囲と除外したもの
+
+個別追加スキル100種類とIntentは収録済み。ただし現在のApp・公式Plugins・Roblox／AviUtl2／公式runtimeの接続、本人の認証・文脈まで、そのまま起動できるcopyではない。非機微な保存設定の参考例を `codex/config/reference-preferences.example.toml` に収録した。自動では適用しない。
+
+[再現範囲・元本文との違い・除外一覧](codex/docs/reproduction-and-exclusions.md)に、内蔵5種類・公式Pluginの42種類・WSLのCloudflare系11種類を名前で掲載した。既存dotfilesの.gitconfigと過去commitにはメール設定が残るため、公開境界の確認は追加分と既存部分を分けて読む。
+
 ## 来歴と差分
 
 [収録component](codex/config/components.json)と[第三者notice](codex/THIRD_PARTY_NOTICES.md)を参照。原文の再配布条件を確認できなかったGitmoji補助と、mutableな外部命令に依存していたWeb Design Guidelinesは、以前の公開版で作った互換版を使う。privateの導入fileとは同一ではない。

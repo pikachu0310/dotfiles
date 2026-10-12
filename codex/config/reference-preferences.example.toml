@@ -1,0 +1,17 @@
+# Optional author reference preferences, not an authenticated config.toml export.
+# Apply selected settings through the receiving user's supported configuration.
+# This file is not named config.toml and is never automatically installed.
+model = "gpt-6.1-sol"
+model_reasoning_effort = "high"
+service_tier = "default"
+approval_policy = "never"
+sandbox_mode = "danger-full-access"
+personality = "pragmatic"
+
+[features]
+fast_mode = true
+js_repl = false
+memories = false
+
+[features.context_management]
+experimental_mode = true

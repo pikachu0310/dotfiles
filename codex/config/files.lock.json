@@ -1,6 +1,6 @@
 {
   "reviewed_at": "2026-10-12",
-  "readme_sha256": "ff5f7a7a97cbc693f3e8dcc1f64aadf4b20846fa388a86f9c4ae8d77f795359a",
+  "readme_sha256": "a54d285e126412163f92b3da6ddac5a34342cfc5410e74951f9c64231c55ba58",
   "files": {
     ".agents/plugins/marketplace.json": "57aafee0722aa5d4ff1332c8c776954b5a6ecd7f2c0e8b428fed42c2988492c1",
     ".agents/skills/ax/LICENSE": "5cddf05ab7955c91818508831a233df4df502bd9fcdd1d8c9c01f53bba095d4b",
@@ -419,12 +419,15 @@
     "config/personal-skills.json": "50018232fe05d8aab01217953be0241617656e897925ca0637f9b3298aa0faad",
     "config/profile.example.json": "3c969e99c7dfca8fa52a8ab0a2fe68e1ee1077a592880b3d4307fa9381f8b672",
     "config/providers.json": "b8afbcf0bbeb0de94208393297dcd6f8c75d294352d6e9495988636b663f88e6",
+    "config/reference-preferences.example.toml": "7df91ad8b59725a1791c8a3ff569a449de2494671e90105bc7ced6c70ecc0adf",
+    "config/reproduction-map.json": "030b26e4a9189e99a4bafa44a8a1250bfc161e379a3a65f51a0a691f0adec82a",
     "config/requirements-unity.txt": "8350c4f24961dee0fa8fe02e8fd3b8605455dd7b352dcc7d0ab6e1f642614219",
     "config/research-tools.json": "ec4b02eed6d3b73b12d3172308546626ffd0077d7da718762d9acb88e1be3726",
     "context/examples/CANDIDATES.example.md": "c462143afcc58c2379c6ce31615cb473500b177f3f5c99e542904b5eb97174a9",
     "context/examples/ME.example.md": "831126885456cc8d2e0f086319c9c9070db39fe0e1e314bf0869d5dcc5cea88c",
     "context/examples/PERSONAL.example.md": "a6978afebd168a026e2198bf0d3c325e42f75a8daf4be1c7164f453d5de9ad50",
     "context/examples/PROJECTS.example.md": "c59c10ed93df372850bb09e02edc9a40daab9cdaffabd60509fec42aa04284e0",
+    "docs/reproduction-and-exclusions.md": "f310289ce45a8da030cc7d4d9199b56f0d48dac18ba07e9d9e3e39f88c75f315",
     "plugins/codex-intent/.codex-plugin/plugin.json": "1bd6b166739f396d7b0114d25f59afbe16222719855af0cf08e9a4a2db2de6ea",
     "plugins/codex-intent/plugin.json": "bd04568c9efb388e58ad2506651c45f48ab4aceca02ec62d351e9b5e726428d8",
     "plugins/codex-intent/scripts/check.ps1": "e4e9c9d26cc7d42c67abfc55d7ff56e9849ebf2b4ae3ff24cddd9cf23522c438",

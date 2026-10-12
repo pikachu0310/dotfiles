@@ -1,0 +1,237 @@
+{
+  "snapshot_date": "2026-10-12",
+  "basis": "Local SKILL.md inventory and saved config; file existence is not proof of current prompt visibility or an executed capability.",
+  "current_individual_skill_names": 100,
+  "published_names_including_intent": 101,
+  "current_individual_names_missing_from_public": [],
+  "official_windows_system_not_vendored": [
+    "imagegen",
+    "openai-docs",
+    "review-agent",
+    "skill-creator",
+    "skill-installer"
+  ],
+  "official_windows_plugin_skills_not_vendored": [
+    "Presentations",
+    "Spreadsheets",
+    "artifact-template-analytics-dashboard",
+    "artifact-template-business-review",
+    "artifact-template-design-report",
+    "artifact-template-experiment-analysis",
+    "artifact-template-financial-budget",
+    "artifact-template-investment-committee-memo",
+    "artifact-template-legal-memorandum",
+    "artifact-template-market-trends-report",
+    "artifact-template-minimal-letterhead",
+    "artifact-template-operating-calendar",
+    "artifact-template-operating-review",
+    "artifact-template-project-kickoff",
+    "artifact-template-project-tracker",
+    "artifact-template-sales-pipeline",
+    "artifact-template-simple-dark-mode",
+    "artifact-template-simple-light-mode",
+    "artifact-template-strategy-memorandum",
+    "artifact-template-system-design",
+    "artifact-template-team-alignment",
+    "artifact-template-three-statement-forecast",
+    "computer-use",
+    "create-pet",
+    "documents",
+    "excel-live-control",
+    "google-docs",
+    "google-drive",
+    "google-drive-comments",
+    "google-sheets",
+    "google-slides",
+    "maintain-space",
+    "manage-schedules",
+    "organize-space",
+    "pdf",
+    "pets",
+    "plugin-management",
+    "sites",
+    "template-creator",
+    "update-pet",
+    "visualize",
+    "write-page"
+  ],
+  "wsl_cloudflare_not_vendored": [
+    "agents-sdk",
+    "cloudflare",
+    "cloudflare-email-service",
+    "cloudflare-one",
+    "cloudflare-one-migrations",
+    "durable-objects",
+    "sandbox-sdk",
+    "turnstile-spin",
+    "web-perf",
+    "workers-best-practices",
+    "wrangler"
+  ],
+  "wsl_additional_system_not_vendored": [
+    "plugin-creator"
+  ],
+  "original_prose_replaced_by_public_compatibility": [
+    "git-commit-style-gitmoji",
+    "web-design-guidelines"
+  ],
+  "previously_retired_not_restored": [
+    "Antigravity codex-handoff",
+    "open-in-vscode",
+    "iterate-to-evidence",
+    "opportunity-solution-tree",
+    "workshop-facilitation",
+    "grill-me (former public wrapper)",
+    "official Unity plugin",
+    "old Computer Use backup plugin",
+    "old WSL reference links other than VRC"
+  ],
+  "root_entry_comparison": [
+    {
+      "directory": "ax",
+      "entry_text_matches_current_after_newline_normalization": false
+    },
+    {
+      "directory": "brainstorming",
+      "entry_text_matches_current_after_newline_normalization": true
+    },
+    {
+      "directory": "frontend-design",
+      "entry_text_matches_current_after_newline_normalization": true
+    },
+    {
+      "directory": "frontend-ui-engineering",
+      "entry_text_matches_current_after_newline_normalization": false
+    },
+    {
+      "directory": "git-commit-style-gitmoji",
+      "entry_text_matches_current_after_newline_normalization": false
+    },
+    {
+      "directory": "grilling",
+      "entry_text_matches_current_after_newline_normalization": true
+    },
+    {
+      "directory": "japanese-cognitive-rhythm-writing",
+      "entry_text_matches_current_after_newline_normalization": true
+    },
+    {
+      "directory": "japanese-tech-writing",
+      "entry_text_matches_current_after_newline_normalization": true
+    },
+    {
+      "directory": "natural-japanese",
+      "entry_text_matches_current_after_newline_normalization": true
+    },
+    {
+      "directory": "ponytail",
+      "entry_text_matches_current_after_newline_normalization": true
+    },
+    {
+      "directory": "prepare-release-candidate",
+      "entry_text_matches_current_after_newline_normalization": true
+    },
+    {
+      "directory": "react-best-practices",
+      "entry_text_matches_current_after_newline_normalization": true
+    },
+    {
+      "directory": "research-and-align",
+      "entry_text_matches_current_after_newline_normalization": true
+    },
+    {
+      "directory": "unity-skills",
+      "entry_text_matches_current_after_newline_normalization": false
+    },
+    {
+      "directory": "vrc-world-development",
+      "entry_text_matches_current_after_newline_normalization": false
+    },
+    {
+      "directory": "web-design-guidelines",
+      "entry_text_matches_current_after_newline_normalization": false
+    },
+    {
+      "directory": "yomiyasu",
+      "entry_text_matches_current_after_newline_normalization": true
+    }
+  ],
+  "official_local_plugin_identifiers": [
+    {
+      "identifier": "documents@openai-primary-runtime",
+      "enabled_setting": true
+    },
+    {
+      "identifier": "pdf@openai-primary-runtime",
+      "enabled_setting": true
+    },
+    {
+      "identifier": "spreadsheets@openai-primary-runtime",
+      "enabled_setting": true
+    },
+    {
+      "identifier": "presentations@openai-primary-runtime",
+      "enabled_setting": true
+    },
+    {
+      "identifier": "template-creator@openai-primary-runtime",
+      "enabled_setting": true
+    },
+    {
+      "identifier": "computer-use@openai-bundled",
+      "enabled_setting": true
+    },
+    {
+      "identifier": "chrome@openai-bundled",
+      "enabled_setting": true
+    },
+    {
+      "identifier": "visualize@openai-bundled",
+      "enabled_setting": true
+    },
+    {
+      "identifier": "browser@openai-bundled",
+      "enabled_setting": true
+    },
+    {
+      "identifier": "codex-app-tools@openai-bundled",
+      "enabled_setting": true
+    },
+    {
+      "identifier": "unified-computer-use@openai-bundled",
+      "enabled_setting": true
+    },
+    {
+      "identifier": "code-review@openai-bundled",
+      "enabled_setting": true
+    }
+  ],
+  "mcp_prerequisites": [
+    {
+      "name": "Roblox_Studio",
+      "requirement": "Install Roblox Studio and its supported MCP proxy; resolve the executable/launcher on the receiving Windows machine."
+    },
+    {
+      "name": "aviutl2",
+      "requirement": "Install AviUtl2 and its agent MCP integration; resolve the executable on the receiving machine."
+    },
+    {
+      "name": "node_repl",
+      "requirement": "Current official App runtime and supported providers generate runtime paths, native pipes and trust bindings. Source-machine environment values are not portable and are not shipped."
+    },
+    {
+      "name": "openaiDeveloperDocs",
+      "requirement": "Register the official documentation MCP server, or use the built-in official-documentation capability if available."
+    }
+  ],
+  "not_shipped": [
+    "authenticated config.toml",
+    "auth.json and account credentials",
+    "runtime native pipe values and internal connector IDs",
+    "private context and real project routing",
+    "chats and private Git history",
+    "project registrations, pins and automation prompts",
+    "Unity project assets and installed Editor package state"
+  ],
+  "reproduction_status": "Workflow source and individual skill names are reproducible; running App/provider/MCP connections and personal context are not a ready-to-run clone."
+}
