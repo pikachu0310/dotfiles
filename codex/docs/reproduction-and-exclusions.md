@@ -1,47 +1,39 @@
-# 再現範囲と除外したもの
+# 再現範囲と除外一覧
 
-2026年10月12日に、公開候補の追加差分と現行Windows profileのファイル・保存設定を再照合した。ファイルの存在、設定上のenabled、現在のpromptへの表示、実行成功は区別する。
+100スキルとCodex Intentを収録しています。運用手順は移せますが、本人の個人文書、ログイン状態、アプリ接続までは配布していません。以下は2026年10月12日の照合結果です。
 
-## 結論
+| 収録しているもの | 利用者が用意するもの |
+| --- | --- |
+| スキル100種類とIntent | スキルの配置とIntentの導入 |
+| 共通指示・空の個人文書・設定例 | 自分の背景、作業場所、利用可能なモデル |
+| 連携の手順と補助スクリプト | 公式プラグイン、各MCP、必要なアプリと認証 |
+| Unity Skills 2.9.0とVRCの手順 | Unity・SDK・実プロジェクト・Editor package |
 
-現行の個別追加スキル100種類はすべて同じ名前で収録し、Intentを含めて101種類。運用ルールとスキルを持つ環境は構築できるが、現在動いているCodex Appの接続・認証・個人文脈までcloneだけで再現する配布物にはなっていない。
-
-| 部分 | 公開候補 | 同じように使うために必要なもの |
-| --- | --- | --- |
-| 個別追加100スキル・Intent | 名前をすべて収録 | user skillsかrepo-localを選んで配置、Intentはmarketplaceから導入 |
-| 個人運用の進め方 | 公開用へ一般化した共通指示とprivate context template | 利用者自身の文脈・作業先・優先順位をprivateに記入 |
-| モデル・推論・動作設定 | Sol／Highの例と非機微な参考設定 | 利用可能なモデルを選び、正式な設定経路へ適用 |
-| OpenAI公式skills・Plugins | 提供元から導入する名前を記録、cacheは非収録 | 対応するApp・Pluginsの導入、必要な認証・権限 |
-| Roblox／AviUtl2／公式node_repl／Docs MCP | 接続の前提を記録 | 各PCで対応アプリ・MCPを導入し、その環境の実体へ接続 |
-| Unity／VRChat | Unity Skills 2.9.0とVRCの制作手順 | Unity・SDK・対象project・対応するEditor packageと接続 |
-| 本人の背景・会話・認証・pin | 非収録 | 同じ本人が別PCで使う場合も、privateな移行・再認証が別途必要 |
-
-`reference-preferences.example.toml` は制作者の保存設定のうち機微でない項目を表した参考例。自動適用されず、組織やprojectの上位policyが優先する。Fast modeの機能を有効にするflagと、現在のチャットでFastが選択されていることは同一ではない。保存済みのモデル設定だけから、すべての実行中turnのモデルを証明しない。
+参考設定は自動適用しません。保存されたモデル・Fast modeの設定と、実行中チャットの選択状態は別に確認します。別PCでのアプリ導入・認証・Editor接続は未確認です。
 
 ## 元の本文と違うもの
 
-17個のskill rootの入口を改行末尾だけ正規化して比べると、11個は現行本文と一致した。違いは次の6個と、公開版Intentのprofile化。Unityの84個を省略したという意味ではない。
+17個のスキルフォルダーの入口を比較すると、改行を除いて11個は現行環境と同じです。次の6個とIntentは公開向けに変更しています。Unityの84種類も省略せず収録しています。
 
-| スキル | 公開用の差分 |
+| スキル | 公開用の変更 |
 | --- | --- |
-| ax | 制作者のWindows絶対pathを利用者向けのpathへ変更 |
-| frontend-ui-engineering | 支援文書をskill内へ移し、global配置でも参照できるよう修正 |
-| unity-skills | compatibility要件を本文へ移動。未接続の公開suiteとして収録し、local bindingを除外 |
-| vrc-world-development | 実task例・個人pathを一般化し、制作者の過去のSDK操作許可を除去 |
-| git-commit-style-gitmoji | 元本文の再配布条件を確認できず、以前作った公開互換版を収録。元版の日本語指定などと完全同一ではない |
-| web-design-guidelines | 元の毎回最新rulesを取得するwrapperを収録せず、固定したMITのrulesと公開互換版を収録。更新方式と報告方法が異なる |
+| ax | 個人のWindowsパスを置換 |
+| frontend-ui-engineering | 参考文書をスキル内へ移動し、配置先に依存しない参照へ修正 |
+| unity-skills | 対応条件を本文へ移動。ローカルの接続情報を除外 |
+| vrc-world-development | 個人パス・実タスク例を一般化。作者の過去のSDK操作許可を除外 |
+| git-commit-style-gitmoji | 元本文の再配布条件を確認できず、自作の互換版を収録。日本語指定などは元版と異なる |
+| web-design-guidelines | 毎回最新版を取得する元の処理を、固定したMITのルールと自作の互換版へ変更。更新・報告方法が異なる |
 
-日本語文書、Brainstorming、Grilling、Ponytailなどを、公開のために勝手に減らしていない。Unityの必要なmodule名もすべて残っている。元の進め方を完全に同一にしたい場合、上の互換版の差分とprivate profileの内容を確認する。
+Intentは利用者のprofileを読む公開版です。Brainstorming、Grilling、日本語のスキル、Ponytailは残しています。
 
-## 配布ファイルを収録しない公式skills
+## 提供元から導入するスキル
 
-これらは現行環境から削除したものではなく、提供元の配布・権限・更新経路に残すもの。Appの内蔵・Plugin cacheや認証済み接続を複製しない。
+以下は現行環境から削除したものではありません。公式の更新・権限管理を保つため、配布ファイルを複製せず、提供元から導入する対象として記録しています。ファイルの存在だけで、現在のチャットで使えることや実行済みであることは判断しません。
 
-### Windows内蔵5種類
+**Windows内蔵5種類**：`imagegen`, `openai-docs`, `review-agent`, `skill-creator`, `skill-installer`
 
-`imagegen`, `openai-docs`, `review-agent`, `skill-creator`, `skill-installer`
-
-### Windows公式Plugin由来42種類
+<details>
+<summary>Windowsの公式プラグイン由来42種類（クリックして表示）</summary>
 
 - `Presentations`
 - `Spreadsheets`
@@ -86,34 +78,22 @@
 - `visualize`
 - `write-page`
 
-20個のartifact-templateもこの42種類に含む。cached fileがあることは、このチャットにすべてのmetadataが表示されることや、すべてが実行済みであることを意味しない。
+20種類のartifact-templateも、この42種類に含みます。
 
-### WSLのCloudflare系11種類
+</details>
 
-`agents-sdk`, `cloudflare`, `cloudflare-email-service`, `cloudflare-one`, `cloudflare-one-migrations`, `durable-objects`, `sandbox-sdk`, `turnstile-spin`, `web-perf`, `workers-best-practices`, `wrangler`
+**WSLのCloudflare系11種類**：`agents-sdk`, `cloudflare`, `cloudflare-email-service`, `cloudflare-one`, `cloudflare-one-migrations`, `durable-objects`, `sandbox-sdk`, `turnstile-spin`, `web-perf`, `workers-best-practices`, `wrangler`
 
-WSL内蔵のplugin-creatorも非収録。WSL側の旧設定と現在のWindows Appの接続を混同せず、不要な古い接続を公開版の必須導入にしない。
+WSL内蔵のplugin-creatorも含めていません。WSLの旧接続設定を、Windows Appの必須設定として移すことはしません。
 
-## 以前外したものは戻していない
+## 以前外したもの
 
-- `Antigravity codex-handoff`
-- `open-in-vscode`
-- `iterate-to-evidence`
-- `opportunity-solution-tree`
-- `workshop-facilitation`
-- `grill-me (former public wrapper)`
-- `official Unity plugin`
-- `old Computer Use backup plugin`
-- `old WSL reference links other than VRC`
+Antigravity codex-handoff、open-in-vscode、iterate-to-evidence、opportunity-solution-tree、workshop-facilitation、旧grill-me、公式Unityプラグイン、旧Computer Useバックアップ、VRC以外の古いWSLリンクは戻していません。公開のために現行スキルを追加で削除したものではありません。
 
-これらの除外は、今回の公開のために現行のスキルを追加で削除したものではない。
+## 個人情報の確認
 
-## 再確認した公開境界
+公開追加分の本文・設定・スクリプト・Git履歴を確認し、既知の認証情報の形式と、実際の認証情報・個人識別子との一致を調べました。追加分に混入は見つかりませんでした。収録画像も公開元と同一で、文字やEXIFのmetadataを持ちません。
 
-公開する追加分の全text、設定・スクリプト、既知のcredential形式、private path・実thread URL、実際の認証ファイルの機微な値とprivate identifierとの一致を確認した。画像は固定された公開元とGit blob identityが一致し、PNGのtext／EXIF metadataを持たない。
+公開名・著作権表示・出典URL、既存のGit設定とコミットのメールアドレスは残しています。認証済み設定、個別の信頼パス、本人の個人文書は追加していません。自動検査だけで、自然文に含まれるあらゆる個人情報を検出できるわけではありません。
 
-追加分で実際のcredential・private identifierの混入は見つからなかった。公開名・著作権表示・公開元URLは残る。これは自然文の個人情報をあらゆる形で自動検出する保証ではない。
-
-既存dotfilesの.gitconfigと過去commitの作者情報にはメールアドレスがある。これは以前から公開されている部分で、今回のCodex追加で変更・消去していない。repository全体を「個人情報なし」とは報告しない。旧設定・Git履歴の整理を行う場合は、Codex追加とは別の対象と操作になる。
-
-詳しい種類別一覧は[再現map](../config/reproduction-map.json)、snapshotの本文hash・来歴は[components](../config/components.json)を参照。
+詳しい一覧は[再現設定](../config/reproduction-map.json)、出典・固定版・差分は[収録component](../config/components.json)を参照してください。

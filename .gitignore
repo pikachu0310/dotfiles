@@ -20,3 +20,7 @@
 # Public Codex workflow package; private runtime files stay ignored inside codex/.gitignore.
 !/README.md
 !/codex/
+
+# Shell setup documentation
+!/docs/
+!/docs/shell.md

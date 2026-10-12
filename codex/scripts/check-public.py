@@ -8,7 +8,7 @@ issues=[]
 def flag(path,line,reason):issues.append({'file':str(path),'line':line,'reason':reason})
 try:lock=json.loads(lock_path.read_text())
 except (OSError,ValueError):raise SystemExit('Missing or invalid reviewed publication file manifest')
-if set(lock) != {'reviewed_at','readme_sha256','files'}:flag('config/files.lock.json',0,'unexpected publication manifest field')
+if set(lock) != {'reviewed_at','readme_sha256','files','repository_files'}:flag('config/files.lock.json',0,'unexpected publication manifest field')
 if not isinstance(lock.get('files'),dict):raise SystemExit('Invalid file manifest')
 for name,digest in lock['files'].items():
  if not isinstance(digest,str) or not re.fullmatch(r'[0-9a-f]{64}',digest):flag('config/files.lock.json',0,'invalid content digest')
@@ -48,6 +48,29 @@ for rel,p in actual.items():
  for n,line in enumerate(text.splitlines(),1):
   for reason,pattern in patterns:
    if pattern.search(line):flag(rel,n,reason)
+# Review shell dotfiles and their documentation with the same credential rules.
+repo=root.parent
+repository_expected=lock.get('repository_files',{})
+if not isinstance(repository_expected,dict):raise SystemExit('Invalid repository file manifest')
+repository_actual={}
+for directory in [repo/'.config',repo/'docs']:
+ if directory.exists():
+  repository_actual.update({p.relative_to(repo).as_posix():p for p in directory.rglob('*') if p.is_file()})
+for name in ['.gitconfig','.gitignore']:
+ if (repo/name).is_file():repository_actual[name]=repo/name
+for rel,digest in repository_expected.items():
+ if Path(rel).is_absolute() or '..' in Path(rel).parts or rel not in repository_actual:flag(rel,0,'invalid or missing repository publication file');continue
+ if not isinstance(digest,str) or not re.fullmatch(r'[0-9a-f]{64}',digest):flag(rel,0,'invalid repository content digest')
+for rel,p in repository_actual.items():
+ if rel not in repository_expected:flag(rel,0,'undeclared repository publication file');continue
+ if p.is_symlink() or any(parent.is_symlink() for parent in p.parents if parent!=repo and repo in parent.parents):flag(rel,0,'linked repository publication input');continue
+ if hashlib.sha256(p.read_bytes()).hexdigest()!=repository_expected[rel]:flag(rel,0,'reviewed repository file hash differs')
+ try:text=p.read_text(encoding='utf-8')
+ except UnicodeDecodeError:flag(rel,0,'unreviewed repository binary');continue
+ for n,line in enumerate(text.splitlines(),1):
+  for reason,pattern in patterns:
+   if pattern.search(line):flag(rel,n,reason)
+
 # Parse package metadata without accessing authenticated host configuration.
 for rel,p in actual.items():
  if p.suffix=='.json':
@@ -62,5 +85,5 @@ for n in set(names):
  if names.count(n)>1:flag('SKILL.md',0,'duplicate skill name: '+n)
 for rel in ['.agents/plugins/marketplace.json','plugins/codex-intent/plugin.json','plugins/codex-intent/.codex-plugin/plugin.json','config/personal-skills.json','config/research-tools.json','config/AGENTS.global.md']:
  if rel not in actual:flag(rel,0,'required distribution file missing')
-print(json.dumps({'ok':not issues,'files':len(actual),'skill_entries':len(names),'issues':issues,'boundary':'declared public package only; no claim of exhaustive semantic privacy detection'},ensure_ascii=False,indent=2))
+print(json.dumps({'ok':not issues,'files':len(actual),'repository_files':len(repository_actual),'skill_entries':len(names),'issues':issues,'boundary':'declared public package only; no claim of exhaustive semantic privacy detection'},ensure_ascii=False,indent=2))
 raise SystemExit(1 if issues else 0)

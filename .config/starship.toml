@@ -1,7 +1,7 @@
 # ref
 # starship configuration reference: https://starship.rs/config/
 # inspired by Pastel Powerline Preset: https://starship.rs/presets/pastel-powerline.html
-# nerd font cheet sheet: https://www.nerdfonts.com/cheat-sheet
+# Nerd Font: https://www.nerdfonts.com/cheat-sheet
 "$schema" = 'https://starship.rs/config-schema.json'
 
 format = """
@@ -26,18 +26,6 @@ $time\
 $cmd_duration\
 [](fg:6_bg)\
 \n$status$character
-"""
-
-right_format = """
-[](bg:7_bg fg:6_bg)\
-[](bg:6_bg fg:5_bg)\
-[](bg:5_bg fg:4_bg)\
-[](bg:4_bg fg:3_bg)\
-[](bg:3_bg fg:2_bg)\
-$memory_usage\
-[](bg:2_bg fg:1_bg)\
-$battery\
-[](fg:1_bg)\
 """
 
 # Disable the blank line at the start of the prompt
@@ -147,41 +135,14 @@ format = '[  $time ]($style)'
 min_time = 500
 style = "bg:6_bg fg:6_fg"
 format = "[  $duration ]($style)"
-show_notifications = true #test
-show_milliseconds = true #test
+show_notifications = true
+show_milliseconds = true
 
 [character]
 success_symbol = "[❯](bold green)"
 error_symbol = "[❯](bold red)"
 
-[memory_usage]
-style = "bg:2_bg fg:2_bg"
-#format = "[ $ram $ram_pct | $swap $swap_pct]($style)"
-format = "[  $ram_pct ]($style)"
-disabled = false
-threshold = -1
-
 [status]
 style = ""
 format = '[$status]($style) '
 disabled = false
-
-[battery]
-full_symbol = " "
-charging_symbol = " "
-discharging_symbol = " "
-unknown_symbol = " "
-format = "[$symbol $percentage]($style)"
-
-[[battery.display]]  # "bold red" style when capacity is between 0% and 10%
-threshold = 10
-style = "bold red"
-
-[[battery.display]]  # "bold yellow" style when capacity is between 10% and 30%
-threshold = 30
-style = "bold yellow"
-
-[[battery.display]]
-threshold = 100
-style = "bold green"
-

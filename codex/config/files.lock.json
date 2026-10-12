@@ -1,6 +1,6 @@
 {
   "reviewed_at": "2026-10-12",
-  "readme_sha256": "332c81bce37664bc7b12a82abfc6bcd9ab56e77c2eb6b2345e917cc570c438b7",
+  "readme_sha256": "bc518abf040cd11ccf0835ec1f351453ed956aa6d48d1ca10b115a8fe8dbe074",
   "files": {
     ".agents/plugins/marketplace.json": "57aafee0722aa5d4ff1332c8c776954b5a6ecd7f2c0e8b428fed42c2988492c1",
     ".agents/skills/ax/LICENSE": "5cddf05ab7955c91818508831a233df4df502bd9fcdd1d8c9c01f53bba095d4b",
@@ -427,8 +427,8 @@
     "context/examples/ME.example.md": "831126885456cc8d2e0f086319c9c9070db39fe0e1e314bf0869d5dcc5cea88c",
     "context/examples/PERSONAL.example.md": "a6978afebd168a026e2198bf0d3c325e42f75a8daf4be1c7164f453d5de9ad50",
     "context/examples/PROJECTS.example.md": "c59c10ed93df372850bb09e02edc9a40daab9cdaffabd60509fec42aa04284e0",
-    "docs/reproduction-and-exclusions.md": "f310289ce45a8da030cc7d4d9199b56f0d48dac18ba07e9d9e3e39f88c75f315",
-    "docs/setup.md": "7926f0168a10e957313c86dd19807c08b1de74eed01a5d5dae363ac00410e988",
+    "docs/reproduction-and-exclusions.md": "9438ff72cd1363dd3ffc2fc90e33c0bd0686a11b9eadfe1bee45ee28e0b53715",
+    "docs/setup.md": "e22f103b35aa8f565a07e2c73abac1258351944c68532efb19a208eb07a2a533",
     "plugins/codex-intent/.codex-plugin/plugin.json": "1bd6b166739f396d7b0114d25f59afbe16222719855af0cf08e9a4a2db2de6ea",
     "plugins/codex-intent/plugin.json": "bd04568c9efb388e58ad2506651c45f48ab4aceca02ec62d351e9b5e726428d8",
     "plugins/codex-intent/scripts/check.ps1": "e4e9c9d26cc7d42c67abfc55d7ff56e9849ebf2b4ae3ff24cddd9cf23522c438",
@@ -436,7 +436,7 @@
     "plugins/codex-intent/skills/codex-intent/agents/openai.yaml": "87cd50dcf10e07909bf05e5b2217514820d91941466c1ea105edbd15e131c1e5",
     "plugins/codex-intent/skills/codex-intent/references/protocol.md": "06bde5e2646d318a1dbb0b8cee1b53f12430990a75ad49dac4746823bc813967",
     "scripts/agtlog.ps1": "494662a7a1212787031d5dbc4ec9bf7eaa50caa44d4cee60047ddf1705ff782e",
-    "scripts/check-public.py": "2d63097479fb4e5420ebe43759c6216af0d8525be74d0fa731d679c6500ab238",
+    "scripts/check-public.py": "f6b919456ddfafc9a38c26a1e57560ebe7e89ecd1c51d04c537043de856c007e",
     "scripts/init-context.py": "596995c1d0ad48f311863d1b47aa08c3818f9c04ba3ed137b0646d8c3263b840",
     "scripts/install-guidance.py": "aef4bdef58d56ba651d5208519868a297affa571d851b7b6d05c69f1b383c453",
     "scripts/install-research-tools.py": "d090f413e8deb1409b04c2c09e75a9e06a180d55e339ea8371b6f64b1a24a17c",
@@ -445,5 +445,14 @@
     "scripts/start-unity-visible.ps1": "ab73affc07ca3af0c64d2fe5f20caf94463d071dc58144b7683f4bc15af59790",
     "scripts/sync-skills.py": "b438babb961b9f285b679097b12c0b1afa0e12d881e27b1b09dd4d9fa76fda66",
     "scripts/windows-computer-use-lease.py": "33766dcbec8bcef807b735212b1d546b353c765f2bfceb7ac02e2dc5741f020f"
+  },
+  "repository_files": {
+    ".config/fish/config.fish": "0cd5b18b9cb83bab75c7954d9ee2ebcc9896883e35dd031bcfd680bd8b2c6c5f",
+    ".config/fish/fish_plugins": "b940b1be488e7feabcdbb740feab9ef81ee2e23385c23a38c5d902823251944b",
+    ".config/git/ignore": "6ba04a56c54f2b2ea0a39df5cb2b5943b140f03fa551e24d3489c14aa53687c3",
+    ".config/starship.toml": "5229b1b37c3d78159642597c6337dd17c58308085115271c7446f41ebc72775d",
+    ".gitconfig": "17d9903c80631d1757ef27dd87afe9eca7bb353f3ec575902fa67b6112250fe4",
+    ".gitignore": "d02498f8d17334c6d134765faaa36bfda3a550cadd04d36f04cdc1d2d93deed5",
+    "docs/shell.md": "cd6bf4bbd58893123e01e297eb8144aa44bc3132d966f74d562e1df5caede86d"
   }
 }

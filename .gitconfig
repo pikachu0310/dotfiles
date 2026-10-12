@@ -8,3 +8,10 @@
 	clean = git-lfs clean -- %f
 [url "ssh://git@github.com/"]
 	insteadOf = https://github.com/
+
+[init]
+	defaultBranch = main
+
+# このPCだけの認証・設定は公開ファイルの外へ置く
+[include]
+	path = ~/.gitconfig.local
