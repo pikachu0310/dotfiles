@@ -1,6 +1,6 @@
 {
   "reviewed_at": "2026-10-12",
-  "readme_sha256": "a54d285e126412163f92b3da6ddac5a34342cfc5410e74951f9c64231c55ba58",
+  "readme_sha256": "332c81bce37664bc7b12a82abfc6bcd9ab56e77c2eb6b2345e917cc570c438b7",
   "files": {
     ".agents/plugins/marketplace.json": "57aafee0722aa5d4ff1332c8c776954b5a6ecd7f2c0e8b428fed42c2988492c1",
     ".agents/skills/ax/LICENSE": "5cddf05ab7955c91818508831a233df4df502bd9fcdd1d8c9c01f53bba095d4b",
@@ -428,6 +428,7 @@
     "context/examples/PERSONAL.example.md": "a6978afebd168a026e2198bf0d3c325e42f75a8daf4be1c7164f453d5de9ad50",
     "context/examples/PROJECTS.example.md": "c59c10ed93df372850bb09e02edc9a40daab9cdaffabd60509fec42aa04284e0",
     "docs/reproduction-and-exclusions.md": "f310289ce45a8da030cc7d4d9199b56f0d48dac18ba07e9d9e3e39f88c75f315",
+    "docs/setup.md": "7926f0168a10e957313c86dd19807c08b1de74eed01a5d5dae363ac00410e988",
     "plugins/codex-intent/.codex-plugin/plugin.json": "1bd6b166739f396d7b0114d25f59afbe16222719855af0cf08e9a4a2db2de6ea",
     "plugins/codex-intent/plugin.json": "bd04568c9efb388e58ad2506651c45f48ab4aceca02ec62d351e9b5e726428d8",
     "plugins/codex-intent/scripts/check.ps1": "e4e9c9d26cc7d42c67abfc55d7ff56e9849ebf2b4ae3ff24cddd9cf23522c438",
